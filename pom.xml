@@ -8,6 +8,43 @@
     <artifactId>ServletCookieExample</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
+
+    <properties>
+        <jboss-as.deploy.hostname>localhost</jboss-as.deploy.hostname>
+        <jboss-as.deploy.user>mteng</jboss-as.deploy.user>
+        <jboss-as.deploy.pass>2Password!</jboss-as.deploy.pass>
+        <plugin.war.warName>${artifactId}</plugin.war.warName>
+    </properties>
+
+    <build>
+       <pluginManagement>
+           <plugins>
+               <plugin>
+                   <groupId>org.apache.maven.plugins</groupId>
+                   <artifactId>maven-war-plugin</artifactId>
+                   <configuration>
+                       <webXml>src\main\webapp\WEB-INF\web.xml</webXml>
+                       <warName>ServletCookieExample</warName>
+                   </configuration>
+               </plugin>
+               <!-- Jboss plugin for command line deployment -->
+               <plugin>
+                   <groupId>org.jboss.as.plugins</groupId>
+                   <artifactId>jboss-as-maven-plugin</artifactId>
+                   <version>7.4.Final</version>
+                   <configuration>
+                       <force>true</force>
+                       <hostname>${jboss-as.deploy.hostname}</hostname>
+                       <username>${jboss-as.deploy.user}</username>
+                       <password>${jboss-as.deploy.pass}</password>
+                       <hostname>localhost</hostname>
+                       <port>9999</port>
+                       <filename>ServletCookieExample.war</filename>
+                   </configuration>
+               </plugin>
+           </plugins>
+       </pluginManagement>
+    </build>
     <dependencies>
         <!--<dependency>-->
             <!--<groupId>javax.servlet</groupId>-->
