@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 //	private final String userID = "Pankaj";
-	private final String userID = "user";
+	private final String userID = "mteng";
 	// private final String password = "journaldev";
 	private final String password = "password";
 
