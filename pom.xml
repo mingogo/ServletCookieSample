@@ -17,6 +17,8 @@
         <!--<webappDirectoryHome>${jbossDeployments}/${project.build.finalName}</webappDirectoryHome>-->
         <webappDirectoryHome>${jbossDeployments}/website.war</webappDirectoryHome>
         <jbossDeployments>C:\source\jboss-eap-6.1\standalone\deployments</jbossDeployments>
+        <spring.version>3.2.2.RELEASE</spring.version>
+        <testng.version>6.8.7</testng.version>
     </properties>
 
     <build>
@@ -63,11 +65,37 @@
         </pluginManagement>
     </build>
     <dependencies>
-        <!--<dependency>-->
-        <!--<groupId>javax.servlet</groupId>-->
-        <!--<artifactId>servlet-api</artifactId>-->
-        <!--<version>2.5</version>-->
-        <!--</dependency>-->
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <!-- JavaConfig need this library -->
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>2.2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>com.sun.jersey</groupId>
             <artifactId>jersey-server</artifactId>
