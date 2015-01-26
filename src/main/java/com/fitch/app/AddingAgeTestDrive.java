@@ -2,6 +2,7 @@ package com.fitch.app;
 
 
 import com.fitch.beans.AddingAge;
+import com.fitch.beans.AddingAgeImpl;
 
 /**
  * Created by mteng on 1/24/2015.
@@ -9,7 +10,7 @@ import com.fitch.beans.AddingAge;
 public class AddingAgeTestDrive {
 
     public static void main (String argv[]){
-        AddingAge addingAge = new AddingAge();
+        AddingAge addingAge = new AddingAgeImpl();
         Integer result = addingAge.AddingAgeMethod(50);
         System.out.println(result);
     }

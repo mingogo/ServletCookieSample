@@ -6,9 +6,12 @@ package com.fitch.config;
 import com.fitch.beans.*;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
 
 @Configuration
+@ImportResource("classpath:spring-test-config.xml")
 public class AppConfig {
 
     @Bean(name="helloBean")

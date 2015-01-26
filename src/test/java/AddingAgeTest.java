@@ -1,4 +1,5 @@
 import com.fitch.beans.AddingAge;
+import com.fitch.beans.AddingAgeImpl;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -18,9 +19,9 @@ public class AddingAgeTest {
 
     @Test
     public void testAddingAgeMethod() throws Exception {
-        AddingAge addingAge = new AddingAge();
+        AddingAge addingAge = new AddingAgeImpl();
         Integer result = addingAge.AddingAgeMethod(30);
-        Integer answer = 50;
+        Integer answer = 30;
         Assert.assertEquals(answer,result);
     }
 }

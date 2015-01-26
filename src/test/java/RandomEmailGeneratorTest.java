@@ -1,4 +1,5 @@
 import com.fitch.beans.RandomEmailGenerator;
+import com.fitch.beans.RandomEmailGeneratorImpl;
 import org.testng.Assert;
 import org.testng.TestNG;
 import org.testng.annotations.AfterMethod;
@@ -19,7 +20,7 @@ public class RandomEmailGeneratorTest extends TestNG {
 
     @Test
     public void testGenerate() throws Exception {
-        RandomEmailGenerator obj = new RandomEmailGenerator();
+        RandomEmailGenerator obj = new RandomEmailGeneratorImpl();
         String email = obj.generate();
 
         Assert.assertNotNull(email);
@@ -29,7 +30,7 @@ public class RandomEmailGeneratorTest extends TestNG {
     }
     @Test
     public void testGenerate2() throws Exception {
-        RandomEmailGenerator obj = new RandomEmailGenerator();
+        RandomEmailGenerator obj = new RandomEmailGeneratorImpl();
         String email = obj.generate();
 
         Assert.assertNotNull(email);
